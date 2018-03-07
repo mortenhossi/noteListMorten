@@ -1,0 +1,15 @@
+Input + submit
+mark as done
+reminder
+delete
+list of entries
+highlight (important)
+edit
+categories?
+icons?
+
+data:
+  text: string
+  datetime: string
+  important: boolean
+  icon: string
