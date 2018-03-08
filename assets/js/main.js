@@ -38,6 +38,8 @@ function buildList(){
   for (var i = 0; i < notes.length; i++) {
     var liElm = document.createElement("li");
     var pElm = document.createElement("p");
+    var btnElm = document.createElement("button");
+    btnElm.innerHTML = "delete";
 
     if (notes[i].important === true) {
       liElm.style.backgroundColor = "deeppink";
