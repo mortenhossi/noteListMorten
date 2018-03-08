@@ -44,7 +44,7 @@ function buildList(){
       liElm.style.color = "white";
     }
     pElm.innerHTML = notes[i].text;
-    pElm.classList.add("pinkUnicorn");
+    pElm.classList.add("textP");
 
     liElm.appendChild(pElm);
     if (notes[i].date !== "") {
