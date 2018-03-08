@@ -38,17 +38,21 @@ function buildList(){
   for (var i = 0; i < notes.length; i++) {
     var liElm = document.createElement("li");
     var pElm = document.createElement("p");
-    var btnElm = document.createElement("button");
-    btnElm.innerHTML = "delete";
+    var deleteElm = document.createElement("button");
+    deleteElm.innerHTML = "delete";
+
 
     if (notes[i].important === true) {
       liElm.style.backgroundColor = "deeppink";
       liElm.style.color = "white";
     }
+
     pElm.innerHTML = notes[i].text;
     pElm.classList.add("textP");
 
     liElm.appendChild(pElm);
+    liElm.appendChild(deleteElm);
+
     if (notes[i].date !== "") {
       var pDateElm = document.createElement("p");
       pDateElm.innerHTML = notes[i].date;
