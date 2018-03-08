@@ -38,8 +38,10 @@ function buildList(){
   for (var i = 0; i < notes.length; i++) {
     var liElm = document.createElement("li");
     var pElm = document.createElement("p");
-    var btnElm = document.createElement("button");
+    var deleteElm = document.createElement("button");
     btnElm.innerHTML = "delete";
+    var editElm = document.createElement("button")
+    editElm.innerHTML = "edit";
 
     if (notes[i].important === true) {
       liElm.style.backgroundColor = "deeppink";
@@ -49,6 +51,8 @@ function buildList(){
     pElm.classList.add("textP");
 
     liElm.appendChild(pElm);
+
+    liElm.appendChild(editElm);
     if (notes[i].date !== "") {
       var pDateElm = document.createElement("p");
       pDateElm.innerHTML = notes[i].date;
@@ -56,6 +60,7 @@ function buildList(){
     }
 
     ulElm.appendChild(liElm);
+
   }
 }
 
