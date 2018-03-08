@@ -39,7 +39,7 @@ function buildList(){
     var liElm = document.createElement("li");
     var pElm = document.createElement("p");
     var deleteElm = document.createElement("button");
-    btnElm.innerHTML = "delete";
+    deleteElm.innerHTML = "delete";
     var editElm = document.createElement("button")
     editElm.innerHTML = "edit";
 
@@ -47,11 +47,12 @@ function buildList(){
       liElm.style.backgroundColor = "deeppink";
       liElm.style.color = "white";
     }
+
     pElm.innerHTML = notes[i].text;
     pElm.classList.add("textP");
 
     liElm.appendChild(pElm);
-
+    liElm.appendChild(deleteElm);
     liElm.appendChild(editElm);
     if (notes[i].date !== "") {
       var pDateElm = document.createElement("p");
