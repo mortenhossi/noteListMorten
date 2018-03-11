@@ -39,7 +39,9 @@ function buildList(){
     var liElm = document.createElement("li");
     var pElm = document.createElement("p");
     var deleteElm = document.createElement("button");
+    deleteElm.setAttribute("data-index", i);
     deleteElm.innerHTML = "delete";
+
     var editElm = document.createElement("button")
     editElm.innerHTML = "edit";
 
@@ -54,6 +56,7 @@ function buildList(){
     liElm.appendChild(pElm);
     liElm.appendChild(deleteElm);
     liElm.appendChild(editElm);
+
     if (notes[i].date !== "") {
       var pDateElm = document.createElement("p");
       pDateElm.innerHTML = notes[i].date;
@@ -61,6 +64,14 @@ function buildList(){
     }
 
     ulElm.appendChild(liElm);
+
+    deleteElm.addEventListener("click", function(event) {
+      var index = event.target.getAttribute("data-index");
+      var notes = getLocal();
+      notes.splice(1, 1);
+      
+
+    });
 
   }
 }
